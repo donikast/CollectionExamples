@@ -2,7 +2,7 @@ package bg.tu_varna.sit.list_example;
 
 import java.util.Objects;
 
-public class Book implements Comparable<Object>{
+public class Book implements Comparable<Book>{
     private String ISBN;
     private String title;
     private int pages;
@@ -56,12 +56,12 @@ public class Book implements Comparable<Object>{
 
     @Override
     public int compareTo(Object o) {
-        //return this.ISBN.compareTo(((Book)o).ISBN);
+        //return this.ISBN.compareTo(o.ISBN);
 
           // first criteria is pages, second - ISBN
-     int pagesResult = this.pages - ((Book)o).pages;
+     int pagesResult = this.pages - o.pages;
         if (pagesResult == 0) {
-            return this.ISBN.compareTo(((Book)o).ISBN);
+            return this.ISBN.compareTo(o.ISBN);
         }
         return pagesResult;
     }
