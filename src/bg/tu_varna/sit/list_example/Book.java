@@ -55,7 +55,7 @@ public class Book implements Comparable<Book>{
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Book o) {
         //return this.ISBN.compareTo(o.ISBN);
 
           // first criteria is pages, second - ISBN
