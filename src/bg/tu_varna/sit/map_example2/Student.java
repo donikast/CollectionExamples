@@ -2,7 +2,7 @@ package bg.tu_varna.sit.map_example2;
 
 import java.util.Objects;
 
-public class Student implements Comparable<Object> {
+public class Student implements Comparable<Student> {
     private String fn;
     private String name;
 
@@ -25,8 +25,8 @@ public class Student implements Comparable<Object> {
     }
 
     @Override
-    public int compareTo(Object o) {
-       return this.fn.compareTo(((Student)o).fn);
+    public int compareTo(Student o) {
+       return this.fn.compareTo(o.fn);
     }
 
     @Override
