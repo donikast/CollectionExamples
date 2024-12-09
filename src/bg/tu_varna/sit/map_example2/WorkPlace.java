@@ -2,7 +2,7 @@ package bg.tu_varna.sit.map_example2;
 
 import java.util.Objects;
 
-public class WorkPlace implements Comparable<Object> {
+public class WorkPlace implements Comparable<WorkPlace> {
     private String room;
     private int computerId;
 
@@ -30,10 +30,10 @@ public class WorkPlace implements Comparable<Object> {
     }
 
     @Override
-    public int compareTo(Object o) {
-        int roomResult= this.room.compareTo(((WorkPlace)o).room);
+    public int compareTo(WorkPlace o) {
+        int roomResult= this.room.compareTo(o.room);
         if(roomResult==0) {
-            return this.computerId-((WorkPlace)o).computerId;
+            return this.computerId-o.computerId;
         }
         return roomResult;
     }
